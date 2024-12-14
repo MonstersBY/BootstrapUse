@@ -8,13 +8,16 @@ module.exports = {
   mode: 'development',
   entry: './src/js/main.js',
   output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    clean: true,
+    filename: "[name][contenthash].js",
+    assetModuleFilename: "assets/images",
   },
   devServer: {
-    static: path.resolve(__dirname, 'dist'),
+    static: path.resolve(__dirname, 'src'),
     port: 8080,
-    hot: true
+    open: true,
+    watchFiles: path.join(__dirname, "src"),
   },
   plugins: [
     new HtmlWebpackPlugin({ template: './src/index.html' })
@@ -25,35 +28,42 @@ module.exports = {
         test: /\.(scss)$/,
         use: [
           {
-            // Adds CSS to the DOM by injecting a `<style>` tag
             loader: 'style-loader'
           },
           {
-            // Interprets `@import` and `url()` like `import/require()` and will resolve them
             loader: 'css-loader'
           },
           {
-            // Loader for webpack to process CSS with PostCSS
             loader: 'postcss-loader',
             options: {
-              postcssOptions: {
+            postcssOptions: {
                 plugins: [
-                  autoprefixer
+                autoprefixer
                 ]
-              }
+            }
             }
           },
           {
-            // Loads a SASS/SCSS file and compiles it to CSS
             loader: 'sass-loader',
             options: {
-                sassOptions: {
-                    silenceDeprecations: ['mixed-decls', 'color-functions', 'global-builtin', 'import'],
-                }
+              sassOptions: {
+                silenceDeprecations: ['mixed-decls', 'color-functions', 'global-builtin', 'import'],
+              }
             }
           }
         ]
-      }
+      },
+      {
+        test: /\.(mov|mp4|jpe?g|png|webp|gif|svg)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+            },
+          },
+        ],
+      },
     ]
   }
 }

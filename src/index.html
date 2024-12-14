@@ -6,9 +6,139 @@
     <title>Test</title>
   </head>
   <body>
-    <div class="container py-4 px-3 mx-auto">
+    <nav class="navbar sticky-top navbar-light bg-light fw-bold">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Бренд</a>
+        <div class="navbar-center d-none d-lg-block">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link active" href="#">Главная</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#catalog">Каталог</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Цены</a>
+            </li>
+          </ul>
+        </div>
+        <div class="d-flex flex-row">
+          <form class="form-inline align-self-stretch">
+            <button class="btn btn-primary align-self-stretch" type="button" data-bs-toggle="modal" data-bs-target="#phoneModal">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+              </svg>
+              <span class="d-none d-lg-block mb-3 mb-md-0 ml-md-3 fw-bold">Заказать звонок</span>
+            </button>
+          </form>
+          <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasDarkNavbar">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Меню</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item active">
+                <a class="nav-link active" href="#">Главная</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Каталог</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Цены</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section class="banner position-relative vh-100 d-flex align-items-center py-5">
+      <div class="position-absolute top-0 start-0 w-100 h-100 z-n1">
+        <video class="w-100 h-100 object-fit-cover" autoplay loop>
+          <source src="./assets/video/video.mp4" type="video/mp4">
+        </video>
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-black bg-opacity-50"></div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-light banner-title text-lg-start text-center">
+            <div>Купить <span class="text-danger">товар</span> с доставкой</div>
+            <div>Официальный поставщик <span class="text-danger">товар</span> в Стране!</div>
+          </div>
+          <div class="col gap-4 d-flex flex-lg-row  flex-md-column flex-sm-column flex-column justify-content-lg-between justify-content-center mb-3">
+            <button type="button" class="btn btn-secondary fs-5 px-5 justify-content-center">Заказать звонок</button>
+            <p class="text-light text-lg-start text-center">Ваши данные <br>под надежной защитой</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="catalog" id="catalog">
+      <div class="section-title text-light d-flex justify-content-center p-3 bg-dark mb-5">
+        <h2 class="fs-1">Каталог</h2>
+      </div>
+      <div class="container p-3">
+        <div class="row">
+          <div class="col-12 col-lg-4  mb-5">
+            <div class="card h-100">
+              <img src="./assets/img/image.webp" class="card-img-top" alt="img">
+              <div class="card-body">
+                <h5 class="card-title fs-3">Товар 1</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <ul>
+                  <li>An item</li>
+                  <li>A second item</li>
+                  <li>A third item</li>
+                </ul>
+              </div>
+              <div class="card-footer">
+                <a href="#" class="btn btn-primary justify-content-center">Купить</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4  mb-5">
+            <div class="card h-100">
+              <img src="./assets/img/image.webp" class="card-img-top" alt="img">
+              <div class="card-body">
+                <h5 class="card-title  fs-3">Товар 2</h5>
+              </div>
+              <div class="card-footer">
+                <a href="#" class="btn btn-primary justify-content-center">Купить</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Modal -->
+    <div class="modal fade" id="phoneModal" tabindex="-1" aria-labelledby="phoneModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="phoneModal">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="container py-4 px-3 mx-auto">
       <h1>Hello, Bootstrap and Webpack!</h1>
       <button class="btn btn-primary">Primary button</button>
-    </div>
+      <video src="./assets/video/video.mp4" controls></video>
+      <img src="./assets/img/image.webp" alt="">
+      <img src="./assets/test.webp" alt="">
+    </div> -->
   </body>
 </html>
