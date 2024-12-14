@@ -6,6 +6,8 @@
   "scripts": {
     "start": "webpack serve",
     "build": "webpack build --mode=production",
+    "build-dev": "set NODE_ENV=development&&webpack",
+    "build-prod": "set NODE_ENV=production&&webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,6 +16,8 @@
   "devDependencies": {
     "autoprefixer": "^10.4.20",
     "css-loader": "^7.1.2",
+    "file-loader": "^6.2.0",
+    "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.3",
     "postcss-loader": "^8.1.1",
     "sass": "^1.83.0",
@@ -25,6 +29,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
+    "babel-loader": "^9.2.1",
     "bootstrap": "^5.3.3"
   }
 }
