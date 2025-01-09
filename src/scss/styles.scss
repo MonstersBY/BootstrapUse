@@ -1,48 +1,48 @@
+
+@import "bootstrap/scss/functions";
+
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/root";
+
+$secondary: #7042c1;
+$primary: #0074d9;
+$btn-border-radius: 0 5rem 0 5rem;
+$btn-padding-y: 0.5rem;
+$btn-padding-x: 1.5rem;
+$navbar-toggler-padding-y: 0.5rem;
+$navbar-toggler-padding-x: 1rem;
+$navbar-toggler-border-radius: 0 5rem 0 5rem;
+
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 21,
+);
+
+$banner-first-text: 3.5rem;
+$banner-second-text: 2.2rem;
+
+$font-sizes: (
+  1: $h1-font-size,
+  2: $h2-font-size,
+  3: $h3-font-size,
+  4: $h4-font-size,
+  5: $h5-font-size,
+  6: $h6-font-size,
+  7: $banner-first-text,
+  8: $banner-second-text,
+);
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $purple
+);
+
 @import "bootstrap/scss/bootstrap";
-
-.btn {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  border-radius: 0 5rem 0 5rem;
-  padding: 0.5rem 1.5rem;
-  height: 100%;
-
-  @media (min-width: 992px) {
-    padding: 0.5rem 1.5rem;
-  }
-}
-.navbar-center {
-  .navbar-nav {
-    flex-direction: row;
-    gap: 1rem;
-  }
-}
-.navbar {
-  svg {
-    width: 16px;
-    height: 16px;
-  }
-}
-.navbar-toggler {
-  border-radius: 0 5rem 0 5rem;
-  padding: 0.5rem 1rem;
-}
-
-.btn-secondary {
-  background: #7042c1;
-}
-
-.banner {
-  &-title {
-    div:first-child {
-      font-size: 3.5rem;
-    }
-    div:last-child {
-      font-size: 2.2rem;
-    }
-  }
-  .row {
-    gap: 21rem;
-  }
-}
